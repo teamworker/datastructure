@@ -8,7 +8,7 @@ import java.util.Stack;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * ±éÀúMap£¬Queue ºÍ StackµÄ·½·¨£¬²»Í¬ÓÚÆÕÍ¨µÄCollection
+ * éå†Mapï¼ŒQueue å’Œ Stackçš„æ–¹æ³•ï¼Œä¸åŒäºæ™®é€šçš„Collection
  * 
  * @date Apr 29, 2014--12:44:31 PM
  * @author Andy
@@ -18,25 +18,25 @@ public class Map_Queue_Stack_Traverse {
 	public static void main(String[] args) {
 
 		/**
-		 * MapµÄ±éÀú
+		 * Mapçš„éå†
 		 */
 		Map<String, String> map = new HashMap<String, String>();
 		map.put("1", "a");
 		map.put("2", "b");
 		map.put("3", "c");
 
-		// ×î¼ò½à¡¢×îÍ¨ÓÃµÄ±éÀú·½Ê½
+		// æœ€ç®€æ´ã€æœ€é€šç”¨çš„éå†æ–¹å¼
 		for (Map.Entry<String, String> entry : map.entrySet()) {
 			System.out.println(entry.getKey() + " = " + entry.getValue());
 		}
-		// Java5Ö®Ç°µÄ±È½Ï¼ò½àµÄ±ãÀû·½Ê½1
+		// Java5ä¹‹å‰çš„æ¯”è¾ƒç®€æ´çš„ä¾¿åˆ©æ–¹å¼1
 		System.out.println("----1----");
 		for (Iterator<Map.Entry<String, String>> it = map.entrySet().iterator(); it
 				.hasNext();) {
 			Map.Entry<String, String> entry = it.next();
 			System.out.println(entry.getKey() + " = " + entry.getValue());
 		}
-		// Java5Ö®Ç°µÄ±È½Ï¼ò½àµÄ±ãÀû·½Ê½2
+		// Java5ä¹‹å‰çš„æ¯”è¾ƒç®€æ´çš„ä¾¿åˆ©æ–¹å¼2
 		System.out.println("----2----");
 		for (Iterator<String> it = map.keySet().iterator(); it.hasNext();) {
 			String key = it.next();
@@ -44,43 +44,43 @@ public class Map_Queue_Stack_Traverse {
 		}
 
 		/**
-		 * ¶ÓÁĞµÄ±éÀú
+		 * é˜Ÿåˆ—çš„éå†
 		 */
 		Queue<Integer> q = new LinkedBlockingQueue<Integer>();
-		// ³õÊ¼»¯¶ÓÁĞ
+		// åˆå§‹åŒ–é˜Ÿåˆ—
 		for (int i = 0; i < 5; i++) {
 			q.offer(i);
 		}
 		System.out.println("-------1-----");
-		// ¼¯ºÏ·½Ê½±éÀú£¬ÔªËØ²»»á±»ÒÆ³ı
+		// é›†åˆæ–¹å¼éå†ï¼Œå…ƒç´ ä¸ä¼šè¢«ç§»é™¤
 		for (Integer x : q) {
 			System.out.println(x);
 		}
 		System.out.println("-------2-----");
-		// ¶ÓÁĞ·½Ê½±éÀú£¬ÔªËØÖğ¸ö±»ÒÆ³ı
+		// é˜Ÿåˆ—æ–¹å¼éå†ï¼Œå…ƒç´ é€ä¸ªè¢«ç§»é™¤
 		while (q.peek() != null) {
 			System.out.println(q.poll());
 		}
 
 		/**
-		 * StackµÄ±éÀú
+		 * Stackçš„éå†
 		 */
 		Stack<Integer> s = new Stack<Integer>();
 		for (int i = 0; i < 10; i++) {
 			s.push(i);
 		}
-		// ¼¯ºÏ±éÀú·½Ê½
+		// é›†åˆéå†æ–¹å¼
 		for (Integer x : s) {
 			System.out.println(x);
 		}
 		System.out.println("------1-----");
-		// Õ»µ¯³ö±éÀú·½Ê½
-		// while (s.peek()!=null) { //²»½¡×³µÄÅĞ¶Ï·½Ê½£¬ÈİÒ×Å×Òì³££¬ÕıÈ·Ğ´·¨ÊÇÏÂÃæµÄ
+		// æ ˆå¼¹å‡ºéå†æ–¹å¼
+		// while (s.peek()!=null) { //ä¸å¥å£®çš„åˆ¤æ–­æ–¹å¼ï¼Œå®¹æ˜“æŠ›å¼‚å¸¸ï¼Œæ­£ç¡®å†™æ³•æ˜¯ä¸‹é¢çš„
 		while (!s.empty()) {
 			System.out.println(s.pop());
 		}
 		System.out.println("------2-----");
-		// ´íÎóµÄ±éÀú·½Ê½
+		// é”™è¯¯çš„éå†æ–¹å¼
 		// for (Integer x : s) {
 		// System.out.println(s.pop());
 		// }

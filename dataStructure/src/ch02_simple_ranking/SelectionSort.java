@@ -2,10 +2,10 @@ package ch02_simple_ranking;
 
 public class SelectionSort {
 	/**
-	 * ѡ������Ľ���ð�����򣬽���Ҫ�Ľ���������O(N^2)���ٵ�O(N),
-	 * ���� �Ƚϴ�����Ȼ����O(N^2)
-	 * ð�����������Ԫ�����ұߣ�����ÿ���ڲ�ѭ���Ǵ�0��ʼ��
-	 * ѡ�����������Ԫ������࣬����ÿ���ڲ�ѭ���Ǵ�j��ʼ��
+	 * 选择排序改进了冒泡排序，将必要的交换次数从O(N^2)减少到O(N),
+	 * 但是 比较次数仍然保持O(N^2)
+	 * 冒泡排序有序的元素在右边，所以每次内层循环是从0开始，
+	 * 选择排序有序的元素在左侧，所以每次内层循环是从j开始。
 	 * @param arr
 	 */
 	public static void sort(long[] arr) {

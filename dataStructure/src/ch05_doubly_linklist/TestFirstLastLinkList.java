@@ -32,7 +32,7 @@ public class TestFirstLastLinkList {
 		list.insertAtEnd(7);
 		list.display();
 	/*	
-		 * 从前往后删
+		 * 浠庡墠寰�鍚庡垹
 		 
 		while(!list.isEmpty()){
 			list.deleteHead();
@@ -40,7 +40,7 @@ public class TestFirstLastLinkList {
 		}*/
 		
 		/*
-		 * 从后往前删
+		 * 浠庡悗寰�鍓嶅垹
 		 */
 		while (!list.isEmpty()) {
 			list.deleteEnd();

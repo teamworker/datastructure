@@ -1,13 +1,13 @@
 package ch05_doubly_linklist;
 
 /*
- * Õâ¸öÊÇË«ÏòÁ´±íµÄ½ÚµãNode
- * Á´½áµã£¬Ïàµ±ÓÚÊÇ³µÏá
+ * è¿™ä¸ªæ˜¯åŒå‘é“¾è¡¨çš„èŠ‚ç‚¹Node
+ * é“¾ç»“ç‚¹ï¼Œç›¸å½“äºæ˜¯è½¦å¢
  */
 public class Node {
-	// Êı¾İÓò
+	// æ•°æ®åŸŸ
 	public long data;
-	// Ö¸ÕëÓò
+	// æŒ‡é’ˆåŸŸ
 	public Node next;
 	public Node previous;
 
@@ -16,7 +16,7 @@ public class Node {
 	}
 
 	/**
-	 * ÏÔÊ¾·½·¨
+	 * æ˜¾ç¤ºæ–¹æ³•
 	 */
 	public void display() {
 		System.out.print(data + " ");

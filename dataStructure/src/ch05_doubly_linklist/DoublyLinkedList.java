@@ -1,12 +1,12 @@
 package ch05_doubly_linklist;
 
 /*
- * Ë«ÏòÁ´±í
+ * åŒå‘é“¾è¡¨
  */
 public class DoublyLinkedList {
-	// Í·½áµã
+	// å¤´ç»“ç‚¹
 	private Node first;
-	// Î²½áµã
+	// å°¾ç»“ç‚¹
 	private Node last;
 
 	public DoublyLinkedList() {
@@ -15,7 +15,7 @@ public class DoublyLinkedList {
 	}
 
 	/**
-	 * ÔÚÍ·½áµã²åÈëÔªËØ ×Ô¼ºĞ´µÄ ¸Ğ¾õÕâÖÖĞ´·¨¸üÒ×ÓÚÀí½â£¬µ±ÈÃ°ÑifºÍelseÖĞÏàÍ¬µÄÓï¾äÌáÈ¡µ½ÍâÃæ ¾ÍÊÇÁíÍâÒ»ÖÖ±È½Ï¼ò½àµÄĞ´·¨
+	 * åœ¨å¤´ç»“ç‚¹æ’å…¥å…ƒç´  è‡ªå·±å†™çš„ æ„Ÿè§‰è¿™ç§å†™æ³•æ›´æ˜“äºç†è§£ï¼Œå½“è®©æŠŠifå’Œelseä¸­ç›¸åŒçš„è¯­å¥æå–åˆ°å¤–é¢ å°±æ˜¯å¦å¤–ä¸€ç§æ¯”è¾ƒç®€æ´çš„å†™æ³•
 	 * 
 	 * @param data
 	 * @return
@@ -65,7 +65,7 @@ public class DoublyLinkedList {
 	public Node deleteHead() {
 		Node node = first;
 		if (isEmpty()) {// list is empty
-			throw new NullPointerException("Á´±íÎª¿Õ£¬ÎŞ·¨É¾³ı½áµã£¡");
+			throw new NullPointerException("é“¾è¡¨ä¸ºç©ºï¼Œæ— æ³•åˆ é™¤ç»“ç‚¹ï¼");
 		} else if (first.next == null) {// the list has only one element
 			first = null;
 			last = null;
@@ -98,7 +98,7 @@ public class DoublyLinkedList {
 		}
 	}
 	/**
-	 * ²åÈëÒ»¸ö½áµã£¬ÔÚÍ·½áµãºó½øĞĞ²åÈë
+	 * æ’å…¥ä¸€ä¸ªç»“ç‚¹ï¼Œåœ¨å¤´ç»“ç‚¹åè¿›è¡Œæ’å…¥
 	 */
 	public void insertFirst(long value) {
 		Node node = new Node(value);
@@ -112,7 +112,7 @@ public class DoublyLinkedList {
 	}
 
 	/**
-	 * ²åÈëÒ»¸ö½áµã£¬´ÓÎ²½áµã½øĞĞ²åÈë
+	 * æ’å…¥ä¸€ä¸ªç»“ç‚¹ï¼Œä»å°¾ç»“ç‚¹è¿›è¡Œæ’å…¥
 	 */
 	public void insertLast(long value) {
 		Node node = new Node(value);
@@ -126,7 +126,7 @@ public class DoublyLinkedList {
 	}
 
 	/**
-	 * É¾³ıÒ»¸ö½áµã£¬ÔÚÍ·½áµãºó½øĞĞÉ¾³ı
+	 * åˆ é™¤ä¸€ä¸ªç»“ç‚¹ï¼Œåœ¨å¤´ç»“ç‚¹åè¿›è¡Œåˆ é™¤
 	 */
 	public Node deleteFirst() {
 		Node tmp = first;
@@ -140,7 +140,7 @@ public class DoublyLinkedList {
 	}
 
 	/**
-	 * É¾³ı½áµã£¬´ÓÎ²²¿½øĞĞÉ¾³ı
+	 * åˆ é™¤ç»“ç‚¹ï¼Œä»å°¾éƒ¨è¿›è¡Œåˆ é™¤
 	 */
 	public Node deleteLast() {
 		Node tmp = last;
@@ -154,7 +154,7 @@ public class DoublyLinkedList {
 	}
 
 	/**
-	 * ÏÔÊ¾·½·¨
+	 * æ˜¾ç¤ºæ–¹æ³•
 	 */
 	public void display() {
 		Node current = first;
@@ -166,7 +166,7 @@ public class DoublyLinkedList {
 	}
 
 	/**
-	 * ²éÕÒ·½·¨
+	 * æŸ¥æ‰¾æ–¹æ³•
 	 */
 	public Node find(long value) {
 		Node current = first;
@@ -180,7 +180,7 @@ public class DoublyLinkedList {
 	}
 
 	/**
-	 * É¾³ı·½·¨£¬¸ù¾İÊı¾İÓòÀ´½øĞĞÉ¾³ı
+	 * åˆ é™¤æ–¹æ³•ï¼Œæ ¹æ®æ•°æ®åŸŸæ¥è¿›è¡Œåˆ é™¤
 	 */
 	public Node delete(long value) {
 		Node current = first;
@@ -201,7 +201,7 @@ public class DoublyLinkedList {
 	}
 
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÎª¿Õ
+	 * åˆ¤æ–­æ˜¯å¦ä¸ºç©º
 	 */
 	public boolean isEmpty() {
 		return (first == null);

@@ -4,7 +4,7 @@ import java.util.Comparator;
 import java.util.Random;
 
 /**
- * 维基百科上quicksort的java代码
+ * 缁村熀鐧剧涓妐uicksort鐨刯ava浠ｇ爜
  * 
  * @date Jun 4, 2014--12:40:41 PM
  * @author Andy

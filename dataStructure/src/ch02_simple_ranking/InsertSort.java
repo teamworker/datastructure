@@ -1,27 +1,27 @@
 package ch02_simple_ranking;
 /**
- * ²åÈëÅÅÐò
+ * æ’å…¥æŽ’åº
  * @author Andy
- * ²åÈëÅÅÐòÊÇÓÉÒ»¸öforÑ­»·¼ÓÉÏÒ»¸öwhileÑ­»·¡£
- * ¶ÔÓÚÒÑ¾­ÓÐÐò»òÕßÊÇ»ù±¾ÓÐÐòµÄÊý¾ÝÀ´Ëµ£¬²åÈëÅÅÐòÒªºÃµÄ¶à¡£µ±Êý¾ÝÓÐÐòµÄÊ±ºò£¬
- * whileÑ­»·µÄÌõ¼þ×ÜÊÇ¼Ù£¬ËùÒÔËü±ä³ÉÍâ²ãÑ­»·µÄÒ»¸ö¼òµ¥Óï¾ä£¬Ö´ÐÐN-1´Î¡£
- * ÔÚÕâÖÖÇé¿öÏÂ£¬Ëã·¨ÔËÐÐÖ»ÐèÒªO(N)µÄÊ±¼ä¡£
+ * æ’å…¥æŽ’åºæ˜¯ç”±ä¸€ä¸ªforå¾ªçŽ¯åŠ ä¸Šä¸€ä¸ªwhileå¾ªçŽ¯ã€‚
+ * å¯¹äºŽå·²ç»æœ‰åºæˆ–è€…æ˜¯åŸºæœ¬æœ‰åºçš„æ•°æ®æ¥è¯´ï¼Œæ’å…¥æŽ’åºè¦å¥½çš„å¤šã€‚å½“æ•°æ®æœ‰åºçš„æ—¶å€™ï¼Œ
+ * whileå¾ªçŽ¯çš„æ¡ä»¶æ€»æ˜¯å‡ï¼Œæ‰€ä»¥å®ƒå˜æˆå¤–å±‚å¾ªçŽ¯çš„ä¸€ä¸ªç®€å•è¯­å¥ï¼Œæ‰§è¡ŒN-1æ¬¡ã€‚
+ * åœ¨è¿™ç§æƒ…å†µä¸‹ï¼Œç®—æ³•è¿è¡Œåªéœ€è¦O(N)çš„æ—¶é—´ã€‚
  */
 public class InsertSort {
 	
 	public static void sort(long[] arr) {
 		long temp = 0;
 		/*
-		 * i´Ó1¿ªÊ¼£¡ Ò²¾ÍÊÇÄÃµÚ¶þ¸öÊý¾Ý¿ªÊ¼ÍùÇ°²å
+		 * iä»Ž1å¼€å§‹ï¼ ä¹Ÿå°±æ˜¯æ‹¿ç¬¬äºŒä¸ªæ•°æ®å¼€å§‹å¾€å‰æ’
 		 */
 		for(int i = 1; i < arr.length; i++) {
-			temp = arr[i];    //´ý²åÈëµÄÔªËØ
+			temp = arr[i];    //å¾…æ’å…¥çš„å…ƒç´ 
 			int index = i;    
 			/*
-			 * ÕâÀïÒ»¶¨Òª×¢Òâarr[index]>=tempÖÐµÄ=ºÅ£¬²»ÄÜ¶ª(ÒòÎªµÚÒ»´Î½øÈëµ½Ñ­»·ÌåµÄÌõ¼þ¾ÍÊÇµÈºÅ)
+			 * è¿™é‡Œä¸€å®šè¦æ³¨æ„arr[index]>=tempä¸­çš„=å·ï¼Œä¸èƒ½ä¸¢(å› ä¸ºç¬¬ä¸€æ¬¡è¿›å…¥åˆ°å¾ªçŽ¯ä½“çš„æ¡ä»¶å°±æ˜¯ç­‰å·)
 			 */
 			while(temp <= arr[index] && index > 0) {
-				//±ÈËû´óµÄÔªËØÓÒÒÆ
+				//æ¯”ä»–å¤§çš„å…ƒç´ å³ç§»
 				arr[index] = arr[index - 1];
 				index--;
 			}

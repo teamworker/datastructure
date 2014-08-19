@@ -1,7 +1,7 @@
 package my_thought_test;
 
 /**
- * ×Ô¼ºÊµÏÖµÄÁ´±í
+ * è‡ªå·±å®ç°çš„é“¾è¡¨
  * 
  * @date Apr 29, 2014--9:51:09 PM
  * @author Andy
@@ -13,18 +13,18 @@ public class MyLinkedList {
 	private Node previous;
 
 	/*
-	 * Ôö¼Ó
+	 * å¢åŠ 
 	 */
 	public Node addFirst(long value) {
 		Node node = new Node(value);
-		// ³£¼û´íÎó node.next = first.next;
-		node.next = first;// ÕâÖÖÊÇÔÚÁ´±í×îÇ°Ãæ¼Ó½áµã
+		// å¸¸è§é”™è¯¯ node.next = first.next;
+		node.next = first;// è¿™ç§æ˜¯åœ¨é“¾è¡¨æœ€å‰é¢åŠ ç»“ç‚¹
 		first = node;
 		return node;
 	}
 
 	/*
-	 * ²éÕÒ
+	 * æŸ¥æ‰¾
 	 */
 	public Node find(long value) {
 		current = first;
@@ -38,7 +38,7 @@ public class MyLinkedList {
 	}
 
 	/*
-	 * É¾³ı
+	 * åˆ é™¤
 	 */
 	public Node delete(long value) {
 
@@ -51,7 +51,7 @@ public class MyLinkedList {
 			current = current.next;
 		}
 		/*
-		 * ÒªÌØ±ğ´¦ÀíÍ·½áµã
+		 * è¦ç‰¹åˆ«å¤„ç†å¤´ç»“ç‚¹
 		 */
 		if (current == first) {
 			first = first.next;

@@ -4,7 +4,7 @@ import java.util.Collections;
 import java.util.HashMap;
 
 /**
- * ÔÚÕâ¸öÀàÖĞÁ·Ï°»òÑéÖ¤Ò»Ğ©±à³ÌÏë·¨
+ * åœ¨è¿™ä¸ªç±»ä¸­ç»ƒä¹ æˆ–éªŒè¯ä¸€äº›ç¼–ç¨‹æƒ³æ³•
  * 
  * @date Apr 24, 2014--4:11:00 PM
  * @author Andy
@@ -12,7 +12,7 @@ import java.util.HashMap;
  */
 
 /*
- * ×Ô¼ºÊµÏÖÒ»¸öÓĞĞòÊı×é
+ * è‡ªå·±å®ç°ä¸€ä¸ªæœ‰åºæ•°ç»„
  */
 public class OrderedArray {
 
@@ -31,11 +31,11 @@ public class OrderedArray {
 	}
 
 	/*
-	 * Ôö¼Ó£¬±£³ÖÓĞĞò
+	 * å¢åŠ ï¼Œä¿æŒæœ‰åº
 	 */
 	public void add(Object o) {
 		/*
-		 * Èç¹ûÊı×éÂúÁË£¬Ôò·ÖÅä¸ü¶à¿Õ¼ä
+		 * å¦‚æœæ•°ç»„æ»¡äº†ï¼Œåˆ™åˆ†é…æ›´å¤šç©ºé—´
 		 */
 		if (isFull()) {
 			size <<= 1;
@@ -44,10 +44,10 @@ public class OrderedArray {
 			arr = newArr;
 		}
 		/*
-		 * ÏòÓĞĞòÊı×éÖĞÌí¼ÓÒ»¸öÔªËØ
+		 * å‘æœ‰åºæ•°ç»„ä¸­æ·»åŠ ä¸€ä¸ªå…ƒç´ 
 		 */
 		/**
-		 * Ò»¶¨Òª×¢ÒâÊı×éµÄ±ß½çÔªËØ£¡
+		 * ä¸€å®šè¦æ³¨æ„æ•°ç»„çš„è¾¹ç•Œå…ƒç´ ï¼
 		 */
 		if (index == 0) {
 			arr[0] = o;
@@ -56,10 +56,10 @@ public class OrderedArray {
 		for (int i = index; i > 0; i--) {
 			if (((Person) arr[i - 1]).compareTo((Person) o) == 1) {
 				arr[i] = arr[i - 1];
-				System.out.println("ÏòºóÒÆ¶¯£¡");
+				System.out.println("å‘åç§»åŠ¨ï¼");
 			} else {
 				arr[i] = o;
-				System.out.println("¼ÓÈëÔªËØ£¡");
+				System.out.println("åŠ å…¥å…ƒç´ ï¼");
 				break;
 			}
 		}
@@ -67,7 +67,7 @@ public class OrderedArray {
 	}
 
 	/**
-	 * ²éÕÒ£º ÒòÎªÊÇÓĞĞòÊı×é£¬ËùÒÔ¿ÉÒÔÊ¹ÓÃ¶ş·Ö²éÕÒ£¬¶ÔÓÚÎŞĞòÊı×é£¬Ö»ÄÜÊ¹ÓÃÏßĞÔ²éÕÒ
+	 * æŸ¥æ‰¾ï¼š å› ä¸ºæ˜¯æœ‰åºæ•°ç»„ï¼Œæ‰€ä»¥å¯ä»¥ä½¿ç”¨äºŒåˆ†æŸ¥æ‰¾ï¼Œå¯¹äºæ— åºæ•°ç»„ï¼Œåªèƒ½ä½¿ç”¨çº¿æ€§æŸ¥æ‰¾
 	 */
 	public int binarySearch(Object o) {
 		int middle =0, low = 0, high = index - 1;
@@ -80,20 +80,20 @@ public class OrderedArray {
 				return -1;
 			} else {
 				if (((Person) arr[middle]).compareTo((Person) o) == -1) {
-					low = middle + 1;//ÕâÀïÊÇmiddle+1£¬µ÷ÕûlowÖµ£¬Ö»¹ØĞÄ´óµÄÒ»°ë
+					low = middle + 1;//è¿™é‡Œæ˜¯middle+1ï¼Œè°ƒæ•´lowå€¼ï¼Œåªå…³å¿ƒå¤§çš„ä¸€åŠ
 				} else {
-					high = middle - 1;//ÕâÀïÊÇmiddle-1£¬µ÷ÕûhighÖµ£¬Ö»¹ØĞÄĞ¡µÄÒ»°ë
+					high = middle - 1;//è¿™é‡Œæ˜¯middle-1ï¼Œè°ƒæ•´highå€¼ï¼Œåªå…³å¿ƒå°çš„ä¸€åŠ
 				}
 			}
 		}
 	}
 
 	/**
-	 * É¾³ı£º É¾³ıÊ±ÈÎÈ»±£³ÖÊı×éÓĞĞò£¬Ó¦¸ÃÌá¹©Á½ÖÖÉ¾³ı·½·¨£¬Ò»ÖÖÍ¨¹ıË÷Òı£¬Ò»ÖÖÍ¨¹ı¶ÔÏó£¨É¾³ıµÚÒ»¸öÏàÍ¬µÄ¶ÔÏó»ò»ù±¾ÀàĞÍ£© ¢ÙÍ¨¹ıË÷ÒıÉ¾³ı
+	 * åˆ é™¤ï¼š åˆ é™¤æ—¶ä»»ç„¶ä¿æŒæ•°ç»„æœ‰åºï¼Œåº”è¯¥æä¾›ä¸¤ç§åˆ é™¤æ–¹æ³•ï¼Œä¸€ç§é€šè¿‡ç´¢å¼•ï¼Œä¸€ç§é€šè¿‡å¯¹è±¡ï¼ˆåˆ é™¤ç¬¬ä¸€ä¸ªç›¸åŒçš„å¯¹è±¡æˆ–åŸºæœ¬ç±»å‹ï¼‰ â‘ é€šè¿‡ç´¢å¼•åˆ é™¤
 	 */
 	public void delete(int index) {
 		if (index < 0 | index > this.index) {
-			throw new ArrayIndexOutOfBoundsException("Ë÷ÒıÖµ²»ºÏ·¨£¡");
+			throw new ArrayIndexOutOfBoundsException("ç´¢å¼•å€¼ä¸åˆæ³•ï¼");
 		}
 		for (int i = index; i < this.index; i++) {
 			arr[i] = arr[i + 1];
@@ -101,14 +101,14 @@ public class OrderedArray {
 	}
 
 	/**
-	 * ¢ÚÍ¨¹ıÖµÉ¾³ı
+	 * â‘¡é€šè¿‡å€¼åˆ é™¤
 	 */
 	public void delete(Object o) {
 
 	}
 
 	/*
-	 * ÅĞ¶ÏÊı×éÊÇ·ñÂúÁË
+	 * åˆ¤æ–­æ•°ç»„æ˜¯å¦æ»¡äº†
 	 */
 	private boolean isFull() {
 		return arr.length == index + 1 ? true : false;
@@ -128,7 +128,7 @@ public class OrderedArray {
 }
 
 /*
- * ÓÃÓÚ²âÊÔÓĞĞòÊı×éµÄ
+ * ç”¨äºæµ‹è¯•æœ‰åºæ•°ç»„çš„
  */
 class Person implements Comparable<Person> {
 

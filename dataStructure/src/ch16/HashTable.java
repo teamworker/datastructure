@@ -6,39 +6,39 @@ public class HashTable {
 	private Info[] arr;
 	
 	/**
-	 * Ä¬ÈÏµÄ¹¹Ôì·½·¨
+	 * é»˜è®¤çš„æ„é€ æ–¹æ³•
 	 */
 	public HashTable() {
 		arr = new Info[100];
 	}
 	
 	/**
-	 * Ö¸¶¨Êı×é³õÊ¼»¯´óĞ¡
+	 * æŒ‡å®šæ•°ç»„åˆå§‹åŒ–å¤§å°
 	 */
 	public HashTable(int maxSize) {
 		arr = new Info[maxSize];
 	}
 	
 	/**
-	 * ²åÈëÊı¾İ
+	 * æ’å…¥æ•°æ®
 	 */
 	public void insert(Info info) {
-		//»ñµÃ¹Ø¼ü×Ö
+		//è·å¾—å…³é”®å­—
 		String key = info.getKey();
-		//¹Ø¼ü×ÖËù×Ô¶¨µÄ¹şÏ£Êı
+		//å…³é”®å­—æ‰€è‡ªå®šçš„å“ˆå¸Œæ•°
 		int hashVal = hashCode(key);
-		//Èç¹ûÕâ¸öË÷ÒıÒÑ¾­±»Õ¼ÓÃ£¬¶øÇÒÀïÃæÊÇÒ»¸öÎ´±»É¾³ıµÄÊı¾İ
+		//å¦‚æœè¿™ä¸ªç´¢å¼•å·²ç»è¢«å ç”¨ï¼Œè€Œä¸”é‡Œé¢æ˜¯ä¸€ä¸ªæœªè¢«åˆ é™¤çš„æ•°æ®
 		while(arr[hashVal] != null && arr[hashVal].getName() != null) {
-			//½øĞĞµİ¼Ó
+			//è¿›è¡Œé€’åŠ 
 			++hashVal;
-			//Ñ­»·
+			//å¾ªç¯
 			hashVal %= arr.length;
 		}
 		arr[hashVal] = info;
 	}
 	
 	/**
-	 * ²éÕÒÊı¾İ
+	 * æŸ¥æ‰¾æ•°æ®
 	 */
 	public Info find(String key) {
 		int hashVal = hashCode(key);
@@ -53,7 +53,7 @@ public class HashTable {
 	}
 	
 	/**
-	 * É¾³ıÊı¾İ
+	 * åˆ é™¤æ•°æ®
 	 * @param key
 	 * @return
 	 */

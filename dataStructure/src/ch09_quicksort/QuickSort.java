@@ -1,32 +1,32 @@
 package ch09_quicksort;
 
 /*
- * ¿ìËÙÅÅÐò£º
- * ÉèÒªÅÅÐòµÄÊý×éÊÇA[0]¡­¡­A[N-1]£¬Ê×ÏÈÈÎÒâÑ¡È¡Ò»¸öÊý¾Ý£¨Í¨³£Ñ¡ÓÃÊý×éµÄµÚÒ»¸öÊý£©×÷Îª¹Ø¼üÊý¾Ý£¬
- * È»ºó½«ËùÓÐ±ÈËüÐ¡µÄÊý¶¼·Åµ½ËüÇ°Ãæ£¬ËùÓÐ±ÈËü´óµÄÊý¶¼·Åµ½ËüºóÃæ£¬Õâ¸ö¹ý³Ì³ÆÎªÒ»ÌË¿ìËÙÅÅÐò¡£ÖµµÃ×¢ÒâµÄÊÇ£¬
- * ¿ìËÙÅÅÐò²»ÊÇÒ»ÖÖÎÈ¶¨µÄÅÅÐòËã·¨£¬Ò²¾ÍÊÇËµ£¬¶à¸öÏàÍ¬µÄÖµµÄÏà¶ÔÎ»ÖÃÒ²Ðí»áÔÚËã·¨½áÊøÊ±²úÉú±ä¶¯¡£
-	 Ò»ÌË¿ìËÙÅÅÐòµÄËã·¨ÊÇ£º
-	 1£©ÉèÖÃÁ½¸ö±äÁ¿i¡¢j£¬ÅÅÐò¿ªÊ¼µÄÊ±ºò£ºi=0£¬j=N-1£»
-	 2£©ÒÔµÚÒ»¸öÊý×éÔªËØ×÷Îª¹Ø¼üÊý¾Ý£¬¸³Öµ¸økey£¬¼´key=A[0]£»
-	 3£©´Ój¿ªÊ¼ÏòÇ°ËÑË÷£¬¼´ÓÉºó¿ªÊ¼ÏòÇ°ËÑË÷(j--)£¬ÕÒµ½µÚÒ»¸öÐ¡ÓÚkeyµÄÖµA[j]£¬½«A[j]¸³¸øA[i]£»
-	 4£©´Ói¿ªÊ¼ÏòºóËÑË÷£¬¼´ÓÉÇ°¿ªÊ¼ÏòºóËÑË÷(i++)£¬ÕÒµ½µÚÒ»¸ö´óÓÚkeyµÄA[i]£¬½«A[i]¸³¸øA[j]£»
-	 5£©ÖØ¸´µÚ3¡¢4²½£¬Ö±µ½i=j£» (3,4²½ÖÐ£¬Ã»ÕÒµ½·ûºÏÌõ¼þµÄÖµ£¬¼´3ÖÐA[j]²»Ð¡ÓÚkey,4ÖÐA[i]²»´óÓÚ
-	   keyµÄÊ±ºò¸Ä±äj¡¢iµÄÖµ£¬Ê¹µÃj=j-1£¬i=i+1£¬Ö±ÖÁÕÒµ½ÎªÖ¹¡£ÕÒµ½·ûºÏÌõ¼þµÄÖµ£¬½øÐÐ½»»»µÄÊ±ºòi£¬ jÖ¸ÕëÎ»ÖÃ²»±ä¡£
-	          ÁíÍâ£¬i==jÕâÒ»¹ý³ÌÒ»¶¨ÕýºÃÊÇi+»òj-Íê³ÉµÄÊ±ºò£¬´ËÊ±ÁîÑ­»·½áÊø£©¡£
+ * å¿«é€ŸæŽ’åºï¼š
+ * è®¾è¦æŽ’åºçš„æ•°ç»„æ˜¯A[0]â€¦â€¦A[N-1]ï¼Œé¦–å…ˆä»»æ„é€‰å–ä¸€ä¸ªæ•°æ®ï¼ˆé€šå¸¸é€‰ç”¨æ•°ç»„çš„ç¬¬ä¸€ä¸ªæ•°ï¼‰ä½œä¸ºå…³é”®æ•°æ®ï¼Œ
+ * ç„¶åŽå°†æ‰€æœ‰æ¯”å®ƒå°çš„æ•°éƒ½æ”¾åˆ°å®ƒå‰é¢ï¼Œæ‰€æœ‰æ¯”å®ƒå¤§çš„æ•°éƒ½æ”¾åˆ°å®ƒåŽé¢ï¼Œè¿™ä¸ªè¿‡ç¨‹ç§°ä¸ºä¸€è¶Ÿå¿«é€ŸæŽ’åºã€‚å€¼å¾—æ³¨æ„çš„æ˜¯ï¼Œ
+ * å¿«é€ŸæŽ’åºä¸æ˜¯ä¸€ç§ç¨³å®šçš„æŽ’åºç®—æ³•ï¼Œä¹Ÿå°±æ˜¯è¯´ï¼Œå¤šä¸ªç›¸åŒçš„å€¼çš„ç›¸å¯¹ä½ç½®ä¹Ÿè®¸ä¼šåœ¨ç®—æ³•ç»“æŸæ—¶äº§ç”Ÿå˜åŠ¨ã€‚
+	 ä¸€è¶Ÿå¿«é€ŸæŽ’åºçš„ç®—æ³•æ˜¯ï¼š
+	 1ï¼‰è®¾ç½®ä¸¤ä¸ªå˜é‡iã€jï¼ŒæŽ’åºå¼€å§‹çš„æ—¶å€™ï¼ši=0ï¼Œj=N-1ï¼›
+	 2ï¼‰ä»¥ç¬¬ä¸€ä¸ªæ•°ç»„å…ƒç´ ä½œä¸ºå…³é”®æ•°æ®ï¼Œèµ‹å€¼ç»™keyï¼Œå³key=A[0]ï¼›
+	 3ï¼‰ä»Žjå¼€å§‹å‘å‰æœç´¢ï¼Œå³ç”±åŽå¼€å§‹å‘å‰æœç´¢(j--)ï¼Œæ‰¾åˆ°ç¬¬ä¸€ä¸ªå°äºŽkeyçš„å€¼A[j]ï¼Œå°†A[j]èµ‹ç»™A[i]ï¼›
+	 4ï¼‰ä»Žiå¼€å§‹å‘åŽæœç´¢ï¼Œå³ç”±å‰å¼€å§‹å‘åŽæœç´¢(i++)ï¼Œæ‰¾åˆ°ç¬¬ä¸€ä¸ªå¤§äºŽkeyçš„A[i]ï¼Œå°†A[i]èµ‹ç»™A[j]ï¼›
+	 5ï¼‰é‡å¤ç¬¬3ã€4æ­¥ï¼Œç›´åˆ°i=jï¼› (3,4æ­¥ä¸­ï¼Œæ²¡æ‰¾åˆ°ç¬¦åˆæ¡ä»¶çš„å€¼ï¼Œå³3ä¸­A[j]ä¸å°äºŽkey,4ä¸­A[i]ä¸å¤§äºŽ
+	   keyçš„æ—¶å€™æ”¹å˜jã€içš„å€¼ï¼Œä½¿å¾—j=j-1ï¼Œi=i+1ï¼Œç›´è‡³æ‰¾åˆ°ä¸ºæ­¢ã€‚æ‰¾åˆ°ç¬¦åˆæ¡ä»¶çš„å€¼ï¼Œè¿›è¡Œäº¤æ¢çš„æ—¶å€™iï¼Œ jæŒ‡é’ˆä½ç½®ä¸å˜ã€‚
+	          å¦å¤–ï¼Œi==jè¿™ä¸€è¿‡ç¨‹ä¸€å®šæ­£å¥½æ˜¯i+æˆ–j-å®Œæˆçš„æ—¶å€™ï¼Œæ­¤æ—¶ä»¤å¾ªçŽ¯ç»“æŸï¼‰ã€‚
  */
 public class QuickSort {
 
 	/**
-	 * »®·ÖÊý×é
+	 * åˆ’åˆ†æ•°ç»„
 	 */
 	public static int partition(long arr[], int left, int right, long point) {
 		int leftPtr = left - 1;
 		int rightPtr = right;
 		while (true) {
-			// Ñ­»·,½«±È¹Ø¼ü×ÖÐ¡µÄÁôÔÚ×ó¶Ë
+			// å¾ªçŽ¯,å°†æ¯”å…³é”®å­—å°çš„ç•™åœ¨å·¦ç«¯
 			while (leftPtr < rightPtr && arr[++leftPtr] < point)
 				;
-			// Ñ­»·£¬½«±È¹Ø¼ü×Ö´óµÄÁôÔÚÓÒ¶Ë
+			// å¾ªçŽ¯ï¼Œå°†æ¯”å…³é”®å­—å¤§çš„ç•™åœ¨å³ç«¯
 			while (rightPtr > leftPtr && arr[--rightPtr] > point)
 				;
 			if (leftPtr >= rightPtr) {
@@ -37,7 +37,7 @@ public class QuickSort {
 				arr[rightPtr] = tmp;
 			}
 		}
-		// ½«¹Ø¼ü×ÖºÍµ±Ç°leftPtrËùÖ¸µÄÕâÒ»¸ö½øÐÐ½»»»
+		// å°†å…³é”®å­—å’Œå½“å‰leftPtræ‰€æŒ‡çš„è¿™ä¸€ä¸ªè¿›è¡Œäº¤æ¢
 		long tmp = arr[leftPtr];
 		arr[leftPtr] = arr[right];
 		arr[right] = tmp;
@@ -57,13 +57,13 @@ public class QuickSort {
 		if (right - left <= 0) {
 			return;
 		} else {
-			// ÉèÖÃ¹Ø¼ü×Ö
+			// è®¾ç½®å…³é”®å­—
 			long point = arr[right];
-			// »ñµÃÇÐÈëµã£¬Í¬Ê±¶ÔÊý×é½øÐÐ»®·Ö
+			// èŽ·å¾—åˆ‡å…¥ç‚¹ï¼ŒåŒæ—¶å¯¹æ•°ç»„è¿›è¡Œåˆ’åˆ†
 			int partition = partition(arr, left, right, point);
-			// ¶Ô×ó±ßµÄ×ÓÊý×é½øÐÐ¿ìËÙÅÅÐò
+			// å¯¹å·¦è¾¹çš„å­æ•°ç»„è¿›è¡Œå¿«é€ŸæŽ’åº
 			sort(arr, left, partition - 1);
-			// ¶ÔÓÒ±ßµÄ×ÓÊý×é½øÐÐ¿ìËÙÅÅÐò
+			// å¯¹å³è¾¹çš„å­æ•°ç»„è¿›è¡Œå¿«é€ŸæŽ’åº
 			sort(arr, partition + 1, right);
 		}
 	}

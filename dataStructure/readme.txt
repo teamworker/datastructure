@@ -1,1 +1,1 @@
-这个项目编码是GBK，就不需要更改了
+This Project was GBK encoding, now is UTF-8

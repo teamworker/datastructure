@@ -3,12 +3,12 @@ package ch05_doubly_linklist;
 import ch04_linklist.Node;
 
 /*
- * Ë«¶ËÁ´±í
+ * åŒç«¯é“¾è¡¨
  */
 public class FirstLastLinkList {
-	// Í·½áµã
+	// å¤´ç»“ç‚¹
 	private Node first;
-	// Î²½áµã
+	// å°¾ç»“ç‚¹
 	private Node last;
 
 	public FirstLastLinkList() {
@@ -17,7 +17,7 @@ public class FirstLastLinkList {
 	}
 
 	/**
-	 * ÔÚÁ´±íµÄÍ·²¿²åÈëÔªËØ ÎÒ×Ô¼ºµÄĞ´·¨£¬¸Ğ¾õÕâÑù¸üÈİÒ×Àí½â
+	 * åœ¨é“¾è¡¨çš„å¤´éƒ¨æ’å…¥å…ƒç´  æˆ‘è‡ªå·±çš„å†™æ³•ï¼Œæ„Ÿè§‰è¿™æ ·æ›´å®¹æ˜“ç†è§£
 	 * 
 	 * @param data
 	 */
@@ -33,7 +33,7 @@ public class FirstLastLinkList {
 	}
 
 	/**
-	 * ÔÚÁ´±í×îºó²åÈë½áµã ÎÒ×Ô¼ºµÄĞ´·¨£¬¸Ğ¾õÕâÑù¸üÒ×ÓÚÀí½â
+	 * åœ¨é“¾è¡¨æœ€åæ’å…¥ç»“ç‚¹ æˆ‘è‡ªå·±çš„å†™æ³•ï¼Œæ„Ÿè§‰è¿™æ ·æ›´æ˜“äºç†è§£
 	 * 
 	 * @param data
 	 */
@@ -49,15 +49,15 @@ public class FirstLastLinkList {
 	}
 
 	/**
-	 * É¾³ıÍ·½áµã ×Ô¼ºĞ´µÄ
+	 * åˆ é™¤å¤´ç»“ç‚¹ è‡ªå·±å†™çš„
 	 * 
 	 * @return
 	 */
 	public Node deleteHead() {
 		Node node = first;
-		if (isEmpty()) {// Èç¹ûÁ´±íÎª¿Õ
-			throw new NullPointerException("Á´±íÎª¿Õ£¡");
-		} else if (first.next == null) {// Èç¹ûÖ»Ê£ÏÂÒ»¸ö½áµã
+		if (isEmpty()) {// å¦‚æœé“¾è¡¨ä¸ºç©º
+			throw new NullPointerException("é“¾è¡¨ä¸ºç©ºï¼");
+		} else if (first.next == null) {// å¦‚æœåªå‰©ä¸‹ä¸€ä¸ªç»“ç‚¹
 			first = null;
 			last = null;
 			return node;
@@ -68,16 +68,16 @@ public class FirstLastLinkList {
 	}
 
 	/**
-	 * Õâ¸ö·½·¨ÆäÊµÔÚË«¶ËÁ´±íÖĞ²»ĞèÒª£¬Èç¹ûĞèÒªÉ¾³ıÎ²½áµãÎÒÃÇ¿ÉÒÔÊ¹ÓÃË«ÏòÁ´±í
-	 * É¾³ıÎ²½áµã ×Ô¼ºĞ´µÄ
+	 * è¿™ä¸ªæ–¹æ³•å…¶å®åœ¨åŒç«¯é“¾è¡¨ä¸­ä¸éœ€è¦ï¼Œå¦‚æœéœ€è¦åˆ é™¤å°¾ç»“ç‚¹æˆ‘ä»¬å¯ä»¥ä½¿ç”¨åŒå‘é“¾è¡¨
+	 * åˆ é™¤å°¾ç»“ç‚¹ è‡ªå·±å†™çš„
 	 * 
 	 * @return
 	 */
 	public Node deleteEnd() {
 		Node node = last;
-		if (isEmpty()) {// ¿ÕÁ´±í
-			throw new NullPointerException("Á´±íÎª¿Õ£¡");
-		} else if (first.next == null) {// Ö»Ê£Ò»¸öÔªËØ
+		if (isEmpty()) {// ç©ºé“¾è¡¨
+			throw new NullPointerException("é“¾è¡¨ä¸ºç©ºï¼");
+		} else if (first.next == null) {// åªå‰©ä¸€ä¸ªå…ƒç´ 
 			first = null;
 			last = null;
 			return node;
@@ -93,7 +93,7 @@ public class FirstLastLinkList {
 	}
 
 	/**
-	 * ²åÈëÒ»¸ö½áµã£¬ÔÚÍ·½áµãºó½øĞĞ²åÈë
+	 * æ’å…¥ä¸€ä¸ªç»“ç‚¹ï¼Œåœ¨å¤´ç»“ç‚¹åè¿›è¡Œæ’å…¥
 	 */
 	public void insertFirst(long value) {
 		Node node = new Node(value);
@@ -105,7 +105,7 @@ public class FirstLastLinkList {
 	}
 
 	/**
-	 * ²åÈëÒ»¸ö½áµã£¬´ÓÎ²½áµã½øĞĞ²åÈë
+	 * æ’å…¥ä¸€ä¸ªç»“ç‚¹ï¼Œä»å°¾ç»“ç‚¹è¿›è¡Œæ’å…¥
 	 */
 	public void insertLast(long value) {
 		Node node = new Node(value);
@@ -118,7 +118,7 @@ public class FirstLastLinkList {
 	}
 
 	/**
-	 * É¾³ıÒ»¸ö½áµã£¬ÔÚÍ·½áµãºó½øĞĞÉ¾³ı
+	 * åˆ é™¤ä¸€ä¸ªç»“ç‚¹ï¼Œåœ¨å¤´ç»“ç‚¹åè¿›è¡Œåˆ é™¤
 	 */
 	public Node deleteFirst() {
 		Node tmp = first;
@@ -130,7 +130,7 @@ public class FirstLastLinkList {
 	}
 
 	/**
-	 * ÏÔÊ¾·½·¨
+	 * æ˜¾ç¤ºæ–¹æ³•
 	 */
 	public void display() {
 		Node current = first;
@@ -142,7 +142,7 @@ public class FirstLastLinkList {
 	}
 
 	/**
-	 * ²éÕÒ·½·¨
+	 * æŸ¥æ‰¾æ–¹æ³•
 	 */
 	public Node find(long value) {
 		Node current = first;
@@ -156,7 +156,7 @@ public class FirstLastLinkList {
 	}
 
 	/**
-	 * É¾³ı·½·¨£¬¸ù¾İÊı¾İÓòÀ´½øĞĞÉ¾³ı
+	 * åˆ é™¤æ–¹æ³•ï¼Œæ ¹æ®æ•°æ®åŸŸæ¥è¿›è¡Œåˆ é™¤
 	 */
 	public Node delete(long value) {
 		Node current = first;
@@ -179,7 +179,7 @@ public class FirstLastLinkList {
 	}
 
 	/**
-	 * ÅĞ¶ÏÊÇ·ñÎª¿Õ
+	 * åˆ¤æ–­æ˜¯å¦ä¸ºç©º
 	 */
 	public boolean isEmpty() {
 		return (first == null);

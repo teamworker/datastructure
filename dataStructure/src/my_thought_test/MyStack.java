@@ -1,7 +1,7 @@
 package my_thought_test;
 
 /**
- * 自己实现的栈
+ * 鑷繁瀹炵幇鐨勬爤
  * 
  * @date Apr 29, 2014--11:25:50 AM
  * @author Andy
